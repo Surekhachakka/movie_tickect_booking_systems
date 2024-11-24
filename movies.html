@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    
+    .oldmovies {
+    margin-bottom: 20px;
+    }
+    
+    .movies {
+       margin-bottom: 20px;
+    }
+    .hinmovies {
+    margin-bottom: 20px;
+    }
+    .movie-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .movie-item {
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .movie-item img {
+      width: 100%;
+      height: 200px;
+      object-fit=cover;
+    }
+
+    .movie-details {
+      padding: 10px;
+    }
+
+    .movie-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .movie-description {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .btn-book {
+      display: block;
+      width: 80%;
+      padding: 10px;
+      background-color:blue;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-book:hover {
+      background-color:black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Now Showing</h1>
+  </header>
+      <section class="oldmovies">
+        <h2>Re-Releases</h2>
+  <div class="container">
+    <div class="movie-list">
+      <div class="movie-item">
+        <img src="movie7.jpg" alt="Movie 7">
+        <div class="movie-details">
+          <h2 class="movie-title">BOMMARILLU</h2>
+          <a href="show7.html" class="btn-book">Book Tickets</a>
+        </div>
+      </div>
+     <div class="movie-item">
+        <img src="movie8.jpg" alt="Movie 8">
+        <div class="movie-details">
+          <h2 class="movie-title">DARLING</h2>
+          <a href="show8.html" class="btn-book">Book Tickets</a>
+        </div>
+      </div>
+     </div>
+  </div>
+</section>
+
+     <section class="movies">
+        <h2>New Releases:TELUGU</h2>
+  <div class="container">
+    <div class="movie-list">
+      <div class="movie-item">
+        <img src="movie19.jpg" alt="Movie 19">
+        <div class="movie-details">
+          <h2 class="movie-title">TILLU 2</h2>
+          <a href="details19.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+          <div class="movie-item">
+        <img src="movie21.jpg" alt="Movie 21">
+        <div class="movie-details">
+          <h2 class="movie-title">OM BHEEM BUSH</h2>
+          <a href="details21.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+          <div class="movie-item">
+        <img src="movie22.jpg" alt="Movie 22">
+        <div class="movie-details">
+          <h2 class="movie-title">GEETHANJALI malli vacchindhi</h2>
+          <a href="details22.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="movie1.jpg" alt="Movie 1">
+        <div class="movie-details">
+          <h2 class="movie-title">HANUMAN</h2>
+          <a href="details.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="movie12.jpg" alt="Movie 12">
+        <div class="movie-details">
+          <h2 class="movie-title">OPERATION VALENTINE</h2>
+          <a href="details12.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="movie17.jpg" alt="Movie 17">
+        <div class="movie-details">
+          <h2 class="movie-title">GHAAMI</h2>
+          <a href="details17.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="movie15.jpg" alt="Movie 15">
+        <div class="movie-details">
+          <h2 class="movie-title">BHEEMA</h2>
+          <a href="details15.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+       <div class="movie-item">
+        <img src="movie18.jpg" alt="Movie 18">
+        <div class="movie-details">
+          <h2 class="movie-title">SWAYAMBU</h2>
+          <a href="details18.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="movie4.jpg" alt="Movie 4">
+        <div class="movie-details">
+          <h2 class="movie-title">KALKI</h2>
+          <a href="details4.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="movie2.jpg" alt="Movie 2">
+        <div class="movie-details">
+          <h2 class="movie-title">PUSHPA 2</h2>
+          <a href="details2.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+       <div class="movie-item">
+        <img src="movie3.jpg" alt="Movie 3">
+        <div class="movie-details">
+          <h2 class="movie-title">OG</h2>
+          <a href="details3.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+        <div class="movie-item">
+        <img src="movie20.jpg" alt="Movie 20">
+        <div class="movie-details">
+          <h2 class="movie-title">THANDEL</h2>
+          <a href="details20.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+        <div class="movie-item">
+        <img src="movie5.jpg" alt="Movie 5">
+        <div class="movie-details">
+          <h2 class="movie-title">DEVARA</h2>
+          <a href="details5.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+         <div class="movie-item">
+        <img src="movie6.jpg" alt="Movie 6">
+        <div class="movie-details">
+          <h2 class="movie-title">GAME CHANGER</h2>
+          <a href="details6.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+         <div class="movie-item">
+        <img src="movie14.jpg" alt="Movie 14">
+        <div class="movie-details">
+          <h2 class="movie-title">DOUBLE ISHMART</h2>
+          <a href="details14.html" class="btn-book">Intrested</a>
+        </div>
+      </div>
+      <!-- Add more movie items as needed -->
+    </div>
+  </div>
+</section>
+      <section class="hinmovies">
+        <h2>New Releases:HINDI</h2>
+  <div class="container">
+    <div class="movie-list">
+        <div class="movie-item">
+        <img src="movie9.jpg" alt="Movie 9">
+        <div class="movie-details">
+          <h2 class="movie-title">YODHA</h2>
+          <a href="details9.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+         <div class="movie-item">
+        <img src="movie11.jpg" alt="Movie 11">
+        <div class="movie-details">
+          <h2 class="movie-title">BASTAR</h2>
+          <a href="details11.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+           <div class="movie-item">
+        <img src="movie10.jpg" alt="Movie 10">
+        <div class="movie-details">
+          <h2 class="movie-title">SHAITAAN</h2>
+          <a href="details10.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+            <div class="movie-item">
+        <img src="movie16.jpg" alt="Movie 16">
+        <div class="movie-details">
+          <h2 class="movie-title">TWO ZERO ONE FOUR</h2>
+          <a href="details16.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+            <div class="movie-item">
+        <img src="movie13.jpg" alt="Movie 13">
+        <div class="movie-details">
+          <h2 class="movie-title">BADE MIYAN CHOTE MIYAN</h2>
+          <a href="details13.html" class="btn-book">Book Now</a>
+        </div>
+      </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events - Your Movie Ticket Booking</title>
+<style>
+    /* Basic styling for layout */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image:url('playsbg.jpg');
+        background-size:cover;
+	background-position:center;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    .plays-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .play-card {
+        width: calc(22.22% - 20px); 
+        background-color:#fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .play-card img {
+        width: 100%;
+        height: 300px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .play-details {
+        padding: 20px;
+    }
+
+    .play-details h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .play-details p {
+        margin: 0;
+        color: #666;
+    }
+
+    .play-details button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .play-details button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>plays</h1>
+    <div class="plays-container">
+        <!-- Event cards will be dynamically generated here -->
+        <!-- Example event cards -->
+        <div class="play-card">
+            <img src="plays1.jpg" alt="PLAY">
+            <div class="play-details">
+                <h2>Story of Sahir,Amrita and Imroz</h2>
+                <p>Date:6 Apr-13 Apr,2024</p>
+               <p>Duration:1hr 15 mins</p>
+               <p>Price:499Rs</p>
+                <p>Location:Multiple Venues</p>
+                <a href="pseat.html" class="btn-book">Book Tickets</a>
+            </div>
+        </div>
+         <div class="play-card">
+            <img src="plays2.jpg" alt="PLAY">
+            <div class="play-details">
+                <h2>Friend Request(Marathi play)</h2>
+                <p>Date:April 13,2024</p>
+               <p>Time: 6:30 PM,Duration:2hr 30mins</p>
+                <p>Location:Ravindra Bharathi,Hyderabad</p>
+                 <p>Price:500Rs onwards</p>
+                  <a href="pseat.html" class="btn-book">Book Tickets</a>
+
+                            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function bookTicket(eventName) {
+        // Add your booking logic here
+        console.log(`Booking ticket for ${eventName}`);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events - Your Movie Ticket Booking</title>
+<style>
+    /* Basic styling for layout */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image:url('eventbg.jpg');
+        background-size:cover;
+	background-position:center;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    .events-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .event-card {
+        width: calc(22.22% - 20px); 
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-card img {
+        width: 100%;
+        height: 200px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .event-details {
+        padding: 20px;
+    }
+
+    .event-details h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .event-details p {
+        margin: 0;
+        color: #666;
+    }
+
+    .event-details button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .event-details button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Events</h1>
+    <div class="events-container">
+        <!-- Event cards will be dynamically generated here -->
+        <!-- Example event cards -->
+        <div class="event-card">
+            <img src="event1.jpg" alt="MUSIC CONCERT">
+            <div class="event-details">
+                <h2>ISL:MUSIC CONCERT</h2>
+                <p>Date: April 5, 2024</p>
+                <p>Time: 7:00 PM</p>
+                <p>Location:Pb Siddhartha College Auditorium</p>
+                <a href="eseat.html" class="btn-book">Book Tickets</a>
+            </div>
+        </div>
+        <div class="event-card">
+            <img src="event2.jpg" alt="Standup Comedy">
+            <div class="event-details">
+                <h2>Standup Comedy</h2>
+                <p>Date: April 6, 2024</p>
+                <p>Time: 8:00PM</p>
+                <p>Location: Amaravathi Conventions,Vijayawada</p>
+                <a href="eseat.html" class="btn-book">Book Tickets</a>
+
+            </div>
+        </div>
+        <div class="event-card">
+            <img src="event3.jpg" alt="Music Concert">
+            <div class="event-details">
+                <h2>Music Concert</h2>
+                <p>Date: April 6, 2024</p>
+                <p>Time: 8:00 PM</p>
+                <p>Location:Father Devaiah Auditorium</p>
+               <a href="eseat.html" class="btn-book">Book Tickets</a>
+
+            </div>
+        </div>
+        <div class="event-card">
+            <img src="event4.jpg" alt="Standup Comedy">
+            <div class="event-details">
+                <h2>Standup Comedy</h2>
+                <p>Date:April 7, 2024</p>
+                <p>Time: 8:00 PM</p>
+                <p>Location:M.B.Bhavan</p>
+                <a href="eseat.html" class="btn-book">Book Tickets</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function bookTicket(eventName) {
+        // Add your booking logic here
+        console.log(`Booking ticket for ${eventName}`);
+    }
+</script>
+</body>
+</html>

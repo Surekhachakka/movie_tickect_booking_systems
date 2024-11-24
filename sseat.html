@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports Ticket Booking</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .area {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    background-color: #007bff;
+    color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    line-height: 100px;
+    font-size: 18px;
+    position: relative;
+  }
+  .area:hover {
+    background-color: #0056b3;
+  }
+  .price {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px; /* Increased margin-bottom */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Select Area for Ticket Booking</h1>
+  <div class="button-container">
+    <div class="area" onclick="bookTickets('VIP', 1000)">
+      VIP Area
+      <div class="price">Price: ₹1000</div>
+    </div>
+    <div class="area" onclick="bookTickets('Premium', 750)">
+      Premium Seats
+      <div class="price">Price: ₹750</div>
+    </div>
+    <div class="area" onclick="bookTickets('General', 500)">
+      General Admission
+      <div class="price">Price: ₹500</div>
+    </div>
+    <!-- Add more areas here -->
+  </div>
+</div>
+
+<script>
+  // Function to book tickets for a specific area
+  function bookTickets(area, pricePerTicket) {
+    const numberOfTickets = prompt(`How many tickets do you want to book for ${area}?`);
+    if (numberOfTickets !== null && numberOfTickets !== "" && !isNaN(parseInt(numberOfTickets))) {
+      const total = pricePerTicket * parseInt(numberOfTickets);
+      const confirmation = confirm(`Confirm booking ${numberOfTickets} ticket(s) for ${area} for a total of ₹${total}?`);
+      if (confirmation) {
+        // Redirect to pays.html
+        window.location.href = "pays.html";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

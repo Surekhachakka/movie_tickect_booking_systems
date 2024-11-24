@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Ticket Booking System</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Select Seats for the Play</h2>
+  <p>Ticket Price: ₹500 each</p>
+  <label for="numTickets">Number of Tickets:</label>
+  <input type="number" id="numTickets" min="1" value="1">
+  <button onclick="calculateTotal()">Book Tickets</button>
+  <p>Note: Seating is on a first come first serve basis.</p>
+  <p id="selected-seats"></p>
+</div>
+
+<script>
+  const ticketPrice = 500; // Price of each ticket in rupees
+  const totalSeats = 50; // Total number of seats available
+  const selectedSeats = new Set();
+
+  // Function to calculate total price
+  function calculateTotal() {
+    const numTickets = parseInt(document.getElementById('numTickets').value);
+    if (numTickets <= 0) {
+      alert('Please select at least one ticket to book.');
+    } else {
+      const totalPrice = numTickets * ticketPrice;
+      const confirmation = confirm(`Confirm booking for ${numTickets} ticket(s) for a total of ₹${totalPrice}?`);
+      if (confirmation) {
+        // Redirect to pays.html
+        window.location.href = 'pays.html';
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Ticket Booking</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .date-selector {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .date-selector select {
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+    .theater {
+        margin-bottom: 20px;
+    }
+    .theater-name {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .show-timings {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .show-timings li {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .show-timing-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .show-timing-btn:hover {
+        background-color: #0056b3;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    .modal-content button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .modal-content button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Select Show Timing</h1>
+    <div class="date-selector">
+        <label for="date">Select Date: </label>
+        <select id="date">
+            <option value="2024-04-6">April 6, 2024</option>
+            <option value="2024-04-7">April 7, 2024</option>
+        </select>
+    </div>
+    <div id="theaters"></div>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Select number of seats to book:</p>
+        <input type="number" id="seatCount" min="1" value="1">
+        <button id="bookBtn">Book</button>
+    </div>
+</div>
+
+<script>
+    const theatersData = [
+        { name: 'Cinepolis: PVR Ripples, Vijayawada', timings: { '2024-04-6': ['11:40 AM','2:30 PM'],'2024-04-7': ['3:00 PM', '6:05 PM'] } },
+        { name: 'G3 Theatres: Raj Yuvraj, Vijayawada', timings: { '2024-04-6': ['12:45 PM'],'2024-04-7': ['12:45 PM', '6:45 PM'] } },
+        { name: 'INOX: Laila Mall, M.G. Road', timings: { '2024-04-6': ['3:00 PM'],'2024-04-7': ['4:00 PM'] } },
+        { name: 'Ravindra Cinemas: Vijayawada', timings: { '2024-04-6': ['10:00 PM'],'2024-04-7': ['4:00 PM']} }
+]
+    const theatersContainer = document.getElementById('theaters');
+    const dateSelector = document.getElementById('date');
+    const modal = document.getElementById('myModal');
+    const seatCountInput = document.getElementById('seatCount');
+    const bookBtn = document.getElementById('bookBtn');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    dateSelector.addEventListener('change', updateShowTimings);
+    bookBtn.addEventListener('click', bookTickets);
+    closeBtn.addEventListener('click', closeModal);
+
+    function updateShowTimings() {
+        const selectedDate = dateSelector.value;
+        theatersContainer.innerHTML = ''; // Clear theaters container
+
+        theatersData.forEach(theater => {
+            const theaterDiv = document.createElement('div');
+            theaterDiv.classList.add('theater');
+
+            const theaterName = document.createElement('div');
+            theaterName.classList.add('theater-name');
+            theaterName.textContent = theater.name;
+            theaterDiv.appendChild(theaterName);
+
+            const showTimingsList = document.createElement('ul');
+            showTimingsList.classList.add('show-timings');
+
+            const timings = theater.timings[selectedDate];
+            if (timings) {
+                timings.forEach(timing => {
+                    const showTimingItem = document.createElement('li');
+                    const showTimingButton = document.createElement('button');
+                    showTimingButton.classList.add('show-timing-btn');
+                    showTimingButton.textContent = timing;
+                    showTimingButton.addEventListener('click', function() {
+                        openModal(theater.name, selectedDate, timing);
+                    });
+                    showTimingItem.appendChild(showTimingButton);
+                    showTimingsList.appendChild(showTimingItem);
+                });
+            }
+
+            theaterDiv.appendChild(showTimingsList);
+            theatersContainer.appendChild(theaterDiv);
+        });
+    }
+
+    function openModal(theaterName, selectedDate, timing) {
+        modal.style.display = 'block';
+        // Set data attributes for theater name, date, and timing
+        modal.setAttribute('data-theater', theaterName);
+        modal.setAttribute('data-date', selectedDate);
+        modal.setAttribute('data-timing', timing);
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+  function bookTickets() {
+    const theaterName = modal.getAttribute('data-theater');
+    const selectedDate = modal.getAttribute('data-date');
+    const timing = modal.getAttribute('data-timing');
+    const seatCount = parseInt(seatCountInput.value);
+
+    // Construct the URL for seat.html with query parameters
+    const url = `seat.html?theater=${encodeURIComponent(theaterName)}&date=${encodeURIComponent(selectedDate)}&timing=${encodeURIComponent(timing)}&seats=${seatCount}`;
+    
+    // Redirect to seat.html with the constructed URL
+    window.location.href = url;
+}
+
+    // Initial update when page loads
+    updateShowTimings();
+</script>
+</body>
+</html>

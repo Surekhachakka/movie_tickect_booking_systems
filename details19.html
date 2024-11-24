@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .movie-details img {
+            width: 300px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .movie-info {
+            flex: 1;
+        }
+
+        .movie-info h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .movie-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+          .trailer-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+           .trailer-container a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .trailer-container a:hover {
+            background-color: #0056b3;
+        }   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-details">
+            <img src="movie19.jpg" alt="Movie Poster">
+            <div class="movie-info">
+                <h2>TILLU Square</h2>
+                <p><strong>Genre:</strong>Comedy,Romance,Drama,Crime Comedy</p>
+                <p><strong>Release Date:</strong> March 29, 2024</p>
+                <p><strong>Director:</strong>Mallik Ram</p>
+                <p><strong>Cast:</strong>Anupama Parameswaran,Siddu Jonnalagadda</p>
+                <p><strong>Description:</strong>Follows Tillu as his life is turned upside down following a mysterious murder.</p>
+                <a href="show19.html" class="button">Book Now</a>
+            </div>
+        </div>
+       <div class="trailer-container">
+        <a href="https://www.youtube.com/watch?v=roX7EqczsUs" target="_blank">Watch Trailer</a>
+        </div>
+    </div>
+</body>
+</html>

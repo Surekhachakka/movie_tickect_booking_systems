@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Payment</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .payment-mode {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .payment-mode.upi {
+      background-color: #000080	 !important;
+    }
+
+    .payment-mode.credit-card {
+      background-color: #00008B	 !important; 
+    }
+
+    .payment-mode.net-banking {
+      background-color: #0000A0 !important; 
+    }
+
+    .options {
+      display: none;
+    }
+
+    .options.active {
+      display: block;
+    }
+
+    .options h3 {
+      margin-top: 0;
+    }
+
+    .highlight-heading {
+      background-color: #151B54;
+      display: inline;
+      padding: 5px;
+    }
+
+    .contact-details {
+      margin-bottom: 50px;
+    }
+
+    .make-payment-button {
+      margin-top: 20px;
+    }
+    .make-payment-button {
+  margin-top: 20px;
+  background-color: #1F45FC; /* Orange color for the button */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  font-weight: bold; /* Bold text */
+}
+
+.make-payment-button:hover {
+  background-color:#0059FF ; /* Lighter shade of orange on hover */
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="contact-details">
+       <h2><span class="highlight-heading">Contact Details</span></h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number">
+    </div>
+    <div class="payment-modes">
+       <h2><span class="highlight-heading">Payment Modes</span></h2>
+      <button class="payment-mode upi" data-target="upiOptions">UPI</button>
+      <button class="payment-mode credit-card" data-target="creditCardOptions">Credit Card</button>
+    </div>
+    <div id="upiOptions" class="options">
+      <h3>UPI Payment Options</h3>
+      <p>Please enter your UPI ID:</p>
+      <input type="text" id="upiId" placeholder="Enter UPI ID">
+      <p>Please select your UPI app:</p>
+      <select id="upiApp">
+        <option value="googlePay">Google Pay</option>
+        <option value="phonePe">PhonePe</option>
+        <option value="paytm">Paytm</option>
+        <!-- Add more UPI apps here -->
+      </select>
+      <button class="make-payment-button">Make Payment</button>
+    </div>
+        <div id="creditCardOptions" class="options">
+      <h3>Credit Card Details</h3>
+      <p>Please enter your card details:</p>
+      <input type="text" id="cardNumber" placeholder="Card Number">
+      <input type="text" id="nameOnCard" placeholder="Name on Card">
+      <input type="text" id="expirationDate" placeholder="Expiration Date">
+      <input type="text" id="cvv" placeholder="CVV">
+      <!-- Add more credit card details here -->
+      <button class="make-payment-button">Make Payment</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var paymentButtons = document.querySelectorAll(".payment-mode");
+      paymentButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+          var targetId = this.getAttribute("data-target");
+          var options = document.querySelectorAll(".options");
+          options.forEach(function(option) {
+            option.classList.remove("active");
+          });
+          var targetOption = document.getElementById(targetId);
+          targetOption.classList.add("active");
+        });
+      });
+
+      var makePaymentButtons = document.querySelectorAll(".make-payment-button");
+      makePaymentButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+          // Here you can add logic to handle payment submission
+          alert("Payment submitted!");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

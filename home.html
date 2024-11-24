@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowSpace Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px ;
+}
+
+header h1 {
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.banner {
+    background: url('poster.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: blue;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+  .movies {
+    margin-bottom: 20px;
+}
+
+.movie-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.movie {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+}
+
+.movie img {
+    width:200px ;
+    height:300px ;
+    border-radius: 5px;
+}
+
+.movie h3 {
+    margin-top: 10px;
+}
+
+.movie p {
+    margin-top: 5px;
+}
+
+button {
+    background-color:blue;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+         .search-bar {
+            margin-left: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px; /* Increased width */
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%; /* Take up the entire width of the search bar */
+            padding: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+       .sports {
+            margin-bottom: 20px;
+        }
+
+        .sports-row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+        }
+
+        .sport {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 250px;
+        }
+
+        .sport img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .sport h3 {
+            margin-top: 10px;
+        }
+
+        .sport p {
+            margin-top: 5px;
+        }
+        .events{
+            margin-bottom: 20px;
+        }
+
+        .events-row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+        }
+
+        .event {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 250px;
+        }
+
+        .event img {
+            width: auto;
+            height: 200px;
+            object-fit:cover;
+            border-radius: 5px;
+        }
+
+        .event h3 {
+            margin-top: 10px;
+        }
+
+        .event p {
+            margin-top: 5px;
+        }
+        .plays{
+            margin-bottom: 20px;
+        }
+        .plays-row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+        }
+
+        .play {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 250px;
+        }
+
+        .play img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .play h3 {
+            margin-top: 10px;
+        }
+
+        .play p {
+            margin-top: 5px;
+        }
+        /* Add this style to position and style the account icon */
+     .account-icon {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff; /* Change color as needed */
+    font-size: 20px; /* Adjust size as needed */
+    text-decoration: none;
+}
+   
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ShowSpace</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="plays.html">Plays</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="login.html" class="btn">Login</a></li>
+                    <li><a href="#" class="account-icon"><i class="fa fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="banner">
+        <div class="container">
+            <h2>Find and Book Your Entertainment</h2>
+            <p>Discover the latest movies, events, plays, and sports near you.</p>
+        </div>
+    </section>
+    
+    <section class="movies">
+        <h2>Now Showing</h2>
+        <div class="movie-row">
+            <div class="movie">
+                <img src="movie19.jpg" alt="TILLU 2">
+                <h3>TILLU 2</h3>
+                <a href="details19.html" class="btn">Details</a>
+            </div>
+            <div class="movie">
+                <img src="movie15.jpg" alt="BHEEMA">
+                <h3>BHEEMA</h3>
+                <a href="details15.html" class="btn">Details</a>
+            </div>
+            <div class="movie">
+                <img src="movie17.jpg" alt="OG">
+                <h3>GHAAMI</h3>
+                <a href="details17.html" class="btn">Details</a>
+            </div>
+           <div class="movie">
+                <img src="movie12.jpg" alt="OPERATION VALENTINE">
+                <h3>OPERATION VALENTINE</h3>
+                <a href="details12.html" class="btn">Details</a>
+            </div>
+          <div class="movie">
+                <img src="movie1.jpg" alt="HANUMAN">
+                <h3>HANUMAN</h3>
+                <a href="details.html" class="btn">Details</a>
+            </div>
+          <div class="movie">
+                <img src="movie11.jpg" alt="BASTAR">
+                <h3>BASTAR</h3>
+                <a href="details11.html" class="btn">Details</a>
+
+            </div>
+        </div>
+    </section>
+   <section class="sports">
+    <h2>Live Sports</h2>
+    <div class="sports-row">
+        <div class="sport">
+            <img src="sports1.jpg" alt="IPL">
+            <h3>IPL:CSK VS SRH</h3>
+        </div>
+        <div class="sport">
+            <img src="sports2.jpg" alt="IPL">
+            <h3>IPL:RR VS RCB </h3>
+        </div>
+       <div class="sport">
+            <img src="sports3.jpg" alt="IPL">
+            <h3>IPL:MI VS DC</h3>
+        </div>
+       <div class="sport">
+            <img src="sports4.jpg" alt="IPL">
+            <h3>IPL:LUCKNOW SUPER GIANTS VS GUJARAT TITANS</h3>
+        </div>
+       <div class="sport">
+            <img src="football.jpg" alt="FOOTBALL">
+            <h3>ISL:NORTHEASTUNITED VS KERALA BLASTERS</h3>
+        </div>
+      <div class="sport">
+            <img src="football2.jpg"alt="FOOTBALL">
+            <h3>ISL:NORTHEASTUNITED VS KERALA BLASTERS</h3>
+        </div>
+    </div>
+   <a href="sports.html" class="btn">MORE</a>
+</section>
+        <section class=events">
+    <h2>EVENTS</h2>
+    <div class="events-row">
+        <div class="event">
+            <img src="event1.jpg" alt="Concert">
+            <h3>Music Concert</h3>
+        </div>
+        <div class="event">
+            <img src="event2.jpg" alt="Comedy">
+            <h3>Standup Comedy</h3>
+        </div>
+       <div class="event">
+            <img src="event3.jpg" alt="Concert">
+            <h3>Music Concert</h3>
+        </div>
+       <div class="event">
+            <img src="event4.jpg" alt="Comedy">
+            <h3>Standup Comedy</h3>
+        </div>
+    </div>
+      <a href="events.html" class="btn">MORE</a>
+</section>
+         <section class=plays">
+    <h2>PLAYS</h2>
+    <div class="plays-row">
+        <div class="play">
+            <img src="plays2.jpg" alt="Play">
+            <h3>Friend Request(Marathi play)</h3>
+        </div>
+     </div>
+       <a href="plays.html" class="btn">MORE</a>
+</section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShowSpace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
